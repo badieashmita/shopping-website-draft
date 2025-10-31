@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VibeCart 🛍️</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ffb6ff 0%, #b344ff 100%);
+      color: #222;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 2rem;
+      background: rgba(255,255,255,0.3);
+      backdrop-filter: blur(10px);
+      border-bottom: 2px solid rgba(255,255,255,0.4);
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #fff;
+      text-shadow: 0 0 10px #fff;
+    }
+
+    #cart-btn {
+      background: #fff;
+      border: none;
+      font-size: 1.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    #cart-btn:hover {
+      transform: scale(1.1);
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    .product {
+      background: rgba(255,255,255,0.8);
+      border-radius: 1.5rem;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .product:hover {
+      transform: translateY(-5px);
+    }
+
+    .product img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .product h2 {
+      font-size: 1.2rem;
+      margin: 0.5rem 0;
+    }
+
+    .product p {
+      color: #666;
+      margin-bottom: 1rem;
+    }
+
+    .add-btn {
+      background: linear-gradient(135deg, #7b2ff7, #f107a3);
+      color: white;
+      border: none;
+      padding: 0.6rem 1rem;
+      border-radius: 999px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .add-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #f107a3;
+    }
+
+    footer {
+      margin-top: auto;
+      text-align: center;
+      padding: 1.5rem;
+      background: rgba(255,255,255,0.2);
+      font-size: 0.9rem;
+    }
+
+    /* cute floating emoji animation */
+    .float-emoji {
+      position: absolute;
+      font-size: 1.5rem;
+      animation: floatUp 1.5s ease-out forwards;
+      pointer-events: none;
+    }
+
+    @keyframes floatUp {
+      0% { opacity: 1; transform: translateY(0) scale(1); }
+      100% { opacity: 0; transform: translateY(-100px) scale(1.5); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>✨ VibeCart ✨</h1>
+    <button id="cart-btn">🛒 <span id="cart-count">0</span></button>
+  </header>
+
+  <section class="product-grid">
+    <div class="product">
+      <img src="https://in.images.search.yahoo.com/yhs/view;_ylt=AwrPplDG9wRp7NUOz4oO9olQ;_ylu=c2VjA3NyBHNsawNpbWcEb2lkAzEyNDJiMTUyY2FlZDAxZTI4ODU1MzkyMWI4NmQ1NjNjBGdwb3MDMwRpdANiaW5n?back=https%3A%2F%2Fin.images.search.yahoo.com%2Fyhs%2Fsearch%3Fp%3Dglossier%2Blip%2Bgloss%26ei%3DUTF-8%26vm%3Dr%26type%3Dtype80160-187439297%26fr%3Dyhs-sz-002%26hsimp%3Dyhs-002%26hspart%3Dsz%26param1%3D1923817239%26tab%3Dorganic%26ri%3D3&w=1374&h=1722&imgurl=glossier-uk.imgix.net%2Ffiles%2Fglossier-lipgloss-pink-carousel-02.png%3Fauto%3Dcompress&rurl=https%3A%2F%2Fuk.glossier.com%2Fproducts%2Flip-gloss&size=223KB&p=glossier+lip+gloss&oid=1242b152caed01e288553921b86d563c&fr2=&fr=yhs-sz-002&tt=Lip+Gloss+%E2%80%93+Glossier&b=0&ni=160&no=3&ts=&vm=r&tab=organic&sigr=y6seKqjukfye&sigb=hk5h9syozBcY&sigi=hZx7c0VsFhWc&sigt=zNskZTveoa0Z&.crumb=uCPD4LsTwco&fr=yhs-sz-002&hsimp=yhs-002&hspart=sz&type=type80160-187439297&vm=r&param1=1923817239" alt="lip gloss" />
+      <h2>Glossier lip gloss</h2>
+      <p>$49</p>
+      <button class="add-btn">Add to Drip 💧</button>
+    </div>
+
+    <div class="product">
+      <img src="https://tse4.mm.bing.net/th/id/OIP.xzBx6VqTg2rRa0AGeJ5xewHaJQ?pid=Api&P=0&h=180" alt="sirum" />
+      <h2>The ordinary</h2>
+      <p>$79</p>
+      <button class="add-btn">Add to Drip 💧</button>
+    </div>
+
+    <div class="product">
+      <img src="https://tse2.mm.bing.net/th/id/OIP.Xe2qd6pu3TCmpUsxiB4uyAHaFj?pid=Api&P=0&h=180" alt="skin care" />
+      <h2>dot&key</h2>
+      <p>$25</p>
+      <button class="add-btn">Add to Drip 💧</button>
+    </div>
+
+    <div class="product">
+        <imt src="https://product.hstatic.net/200000617989/product/318224577_8365045063565804_4850327584673260438_n_42140ca4de24437683b9a816c5e0e3c3_grande.png" alt="Lip oil"/>
+        <h2>La mer</h2>
+        <p>$88</p>
+        <button class="add-btn">Add to Drip 💧</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 VibeCart. Stay drippy ✨</p>
+  </footer>
+
+  <script>
+    const addBtns = document.querySelectorAll(".add-btn");
+    const cartCount = document.getElementById("cart-count");
+    let count = 0;
+
+    addBtns.forEach(btn => {
+      btn.addEventListener("click", (e) => {
+        count++;
+        cartCount.textContent = count;
+        btn.textContent = "Added ✅";
+        btn.style.transform = "scale(1.2)";
+        setTimeout(() => {
+          btn.textContent = "Add to Drip 💧";
+          btn.style.transform = "scale(1)";
+        }, 800);
+
+        // floating emoji animation
+        const emoji = document.createElement("span");
+        emoji.textContent = "💖";
+        emoji.className = "float-emoji";
+        emoji.style.left = e.pageX + "px";
+        emoji.style.top = e.pageY + "px";
+        document.body.appendChild(emoji);
+        setTimeout(() => emoji.remove(), 1500);
+      });
+    });
+  </script>
+</body>
+</html>
+
