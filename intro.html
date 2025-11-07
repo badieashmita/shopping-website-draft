@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Loading ❤️</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#270c96;
+    overflow:hidden;
+    font-family: "Poppins", serif;
+  }
+
+  .heart {
+    width:120px;
+    height:120px;
+    background:#a309c6;
+    position:relative;
+    transform:rotate(-45deg);
+    animation: beat 0.7s infinite;
+  }
+  .heart:before,
+  .heart:after {
+    content:"";
+    width:120px;
+    height:120px;
+    background:#a309c6;
+    border-radius:50%;
+    position:absolute;
+  }
+  .heart:before { top:-60px; left:0; }
+  .heart:after { left:60px; top:0; }
+
+  @keyframes beat {
+    0% { transform: rotate(-45deg) scale(1); }
+    50% { transform: rotate(-45deg) scale(1.4); }
+    100% { transform: rotate(-45deg) scale(1); }
+  }
+
+  .loading {
+    position: absolute;
+    bottom: 80px;
+    color: white;
+    font-size: 22px;
+    animation: fade 1s infinite alternate;
+  }
+
+  @keyframes fade {
+    from { opacity: .4; }
+    to { opacity: 1; }
+  }
+</style>
+</head>
+
+<body>
+
+<div class="loading">Loading your Drip 💖✨</div>
+<div class="heart"></div>
+
+<script>
+  setTimeout(() => {
+    window.location.href = "shopping website.html"; 
+  }, 3000);
+</script>
+
+
+</body>
+</html>
+
